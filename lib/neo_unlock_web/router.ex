@@ -18,6 +18,13 @@ defmodule NeoUnlockWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+
+    # live "/teams", TeamLive.Index, :index
+    live "/teams/new", TeamLive.New
+    # live "/teams/:external_id/edit", TeamLive.Index, :edit
+
+    live "/team/:external_id", TeamLive.Show, :show
+    live "/team/:external_id/show/edit", TeamLive.Show, :edit
   end
 
   # Other scopes may use custom stacks.
